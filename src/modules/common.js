@@ -1,6 +1,6 @@
 ly.define('common', function (require, module, exports) {
     var config = require('config')
-    var datetime=require('datetime')
+    var datetime = require('datetime')
     module.exports = {
         log: function (arg) {
             if (config.debugger) {
@@ -12,11 +12,20 @@ ly.define('common', function (require, module, exports) {
 
             }
         },
-
         error: function (message) {
             if (config.debugger) {
                 throw new Error(message);
             }
+        },
+        /**
+         * @name 弹出信息框
+         * @param {*} value alert
+         */
+        alert: function (value) {
+            if (config.debugger) {
+                alert(value)
+            }
+
         },
         /**
          * @name 验证是否为空或Null
