@@ -1,6 +1,6 @@
-ly.define('config', function (require, module, exports) {
+lazy.define('config', function (require, module, exports) {
     //作者
-    exports.author='zhaoyang'
+    exports.author='joy'
     //版本信息
     exports.verison='1.0.0'
     //是否debug模式
