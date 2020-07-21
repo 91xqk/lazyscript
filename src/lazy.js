@@ -38,3 +38,5 @@ lazy.init = function () {
 }
 
 window.lazy = window.zy = lazy
+
+

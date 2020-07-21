@@ -1,4 +1,4 @@
-ly.define('httpclient', function (require, module, exports) {
+lazy.define('httpclient', function (require, module, exports) {
     'use strict';
     var ly_layer = require('layer')
     var exres = {
