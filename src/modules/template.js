@@ -1,6 +1,4 @@
-const template = require("../lib/template");
-
-(function ($, lazy) {
+(function ($, lazy, tpl) {
     lazy.define('template', function (require, module, exports) {
         'use strict';
         $.fn.template = function () {
@@ -10,7 +8,7 @@ const template = require("../lib/template");
 
         $.fn.template.method = {
             setData: function (jq, data) {
-                template(jq, data);
+                tpl(jq, data);
                 return jq
             },
             getHtml: function () {
@@ -24,4 +22,4 @@ const template = require("../lib/template");
         return null;
     })
 
-})(window.jQuery, window.lazy)
+})(window.jQuery, window.lazy, template)
