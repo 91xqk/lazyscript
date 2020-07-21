@@ -37,4 +37,4 @@ lazy.init = function () {
     })
 }
 
-window.lazy = window.ly = lazy
+window.lazy = window.zy = lazy
