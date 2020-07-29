@@ -1,4 +1,4 @@
-ly.define('common', function (require, module, exports) {
+iKnow.define('common', function (require, module, exports) {
     var config = require('config')
     var datetime = require('datetime')
     module.exports = {

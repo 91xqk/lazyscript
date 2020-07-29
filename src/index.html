@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="iKnow.js"></script>
+    <script src="iKnow-1.0.1.js"></script>
     <script src="../src/modules/common.js"></script>
     <script src="../src/modules/datetime.js"></script>
     <script src="../src/modules/config.js"></script>
     <script src="../src/modules/extend.js"></script>
     <script src="../src/modules/md5.js"></script>
+    <script src="../src/modules/layer.js"></script>
 </head>
 
 <body>
     <script>
         iKnow.init();
-        iKnow.md5.md5('123');
-
-
-
+        var key = iKnow.md5.md5('123');
+        iKnow.common.alert(key)
     </script>
 
 </body>
