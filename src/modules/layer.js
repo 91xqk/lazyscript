@@ -1,4 +1,4 @@
-ly.define('layer', function (require, module, exports) {
+iKnow.define('layer', function (require, module, exports) {
     module.exports = {
         //
         msg: function (msg) {

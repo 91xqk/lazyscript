@@ -1,4 +1,4 @@
-lazy.define('config', function (require, module, exports) {
+iKnow.define('config', function (require, module, exports) {
     //作者
     exports.author='joy'
     //版本信息

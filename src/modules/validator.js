@@ -1,4 +1,4 @@
-lazy.define('validator', function (require, module, exports) {
+iKnow.define('validator', function (require, module, exports) {
     'use strict';
     module.exports = {
         validReg: function (obj, reg, msg) {

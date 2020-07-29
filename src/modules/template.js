@@ -1,5 +1,5 @@
-(function ($, lazy, tpl) {
-    lazy.define('template', function (require, module, exports) {
+(function ($, iKnow, tpl) {
+    iKnow.define('template', function (require, module, exports) {
         'use strict';
         $.fn.template = function () {
             var $this = $(this)
@@ -22,4 +22,4 @@
         return null;
     })
 
-})(window.jQuery, window.lazy, template)
+})(window.jQuery, window.lazy, window.template)
