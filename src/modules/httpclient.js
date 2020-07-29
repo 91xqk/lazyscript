@@ -1,7 +1,6 @@
 (function (window, $) {
     'use strict';
     iKnow.define('httpclient', function (require, module, exports) {
-        'use strict';
         var ly_layer = require('layer')
         var exres = {
             code: httpCode.exception,
@@ -15,7 +14,7 @@
             },
             // http 通信异常的时候调用此方法
             httpErrorLog: function (msg) {
-                ly.log(msg);
+                iKnow.log(msg);
             },
             // get请求方法（异步）:url地址,callback回调函数
             httpAsyncGet: function (url, callback) {
@@ -26,8 +25,8 @@
                     async: true,
                     cache: false,
                     success: function (data) {
-                        if (data.code == ly.httpCode.exception) {
-                            ly.httpErrorLog(data.info);
+                        if (data.code == iKnow.httpCode.exception) {
+                            iKnow.httpErrorLog(data.info);
                             this.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
@@ -52,14 +51,14 @@
                     async: false,
                     cache: false,
                     success: function (data) {
-                        if (data.code == ly.httpCode.exception) {
-                            ly.httpErrorLog(data.info);
+                        if (data.code == iKnow.httpCode.exception) {
+                            iKnow.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
                         res = data;
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        ly.httpErrorLog(textStatus);
+                        iKnow.httpErrorLog(textStatus);
                     },
                     beforeSend: function () {},
                     complete: function () {}
@@ -76,14 +75,14 @@
                     async: true,
                     cache: false,
                     success: function (data) {
-                        if (data.code == ly.httpCode.exception) {
-                            ly.httpErrorLog(data.info);
+                        if (data.code == iKnow.httpCode.exception) {
+                            iKnow.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
                         callback(data);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        ly.httpErrorLog(textStatus);
+                        iKnow.httpErrorLog(textStatus);
                         callback(exres);
                     },
                     beforeSend: function () {},
@@ -100,14 +99,14 @@
                     async: false,
                     cache: false,
                     success: function (data) {
-                        if (data.code == ly.httpCode.exception) {
-                            ly.httpErrorLog(data.info);
+                        if (data.code == iKnow.httpCode.exception) {
+                            iKnow.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
                         callback(data);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        ly.httpErrorLog(textStatus);
+                        iKnow.httpErrorLog(textStatus);
                         callback(exres);
                     },
                     beforeSend: function () {},
@@ -124,15 +123,15 @@
                     async: true,
                     cache: false,
                     success: function (res) {
-                        if (res.code == ly.httpCode.success) {
+                        if (res.code == iKnow.httpCode.success) {
                             callback(res.data);
                         } else {
-                            ly.httpErrorLog(res.info);
+                            iKnow.httpErrorLog(res.info);
                             callback(null);
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        ly.httpErrorLog(textStatus);
+                        iKnow.httpErrorLog(textStatus);
                         callback(null);
                     },
                     beforeSend: function () {},
@@ -140,49 +139,49 @@
                 });
             },
             updateForm: function (url, param, callback) {
-                ly.loading(true, '正在更新数据');
-                ly.httpAsyncPost(url, param, function (res) {
-                    ly.loading(false);
-                    if (res.code == ly.httpCode.success) {
+                iKnow.loading(true, '正在更新数据');
+                iKnow.httpAsyncPost(url, param, function (res) {
+                    iKnow.loading(false);
+                    if (res.code == iKnow.httpCode.success) {
                         if (!!callback) {
                             callback(res);
                         }
-                        ly.alert.success(res.info);
+                        iKnow.alert.success(res.info);
                     } else {
-                        ly.alert.error(res.info);
-                        ly.httpErrorLog(res.info);
+                        iKnow.alert.error(res.info);
+                        iKnow.httpErrorLog(res.info);
                     }
                     layer.close(layer.index);
                 });
             },
             deleteForm: function (url, param, callback) {
-                ly.loading(true, '正在删除数据');
-                ly.httpAsyncPost(url, param, function (res) {
-                    ly.loading(false);
-                    if (res.code == ly.httpCode.success) {
+                iKnow.loading(true, '正在删除数据');
+                iKnow.httpAsyncPost(url, param, function (res) {
+                    iKnow.loading(false);
+                    if (res.code == iKnow.httpCode.success) {
                         if (!!callback) {
                             callback(res);
                         }
-                        ly.alert.success(res.info);
+                        iKnow.alert.success(res.info);
                     } else {
-                        ly.alert.error(res.info);
-                        ly.httpErrorLog(res.info);
+                        iKnow.alert.error(res.info);
+                        iKnow.httpErrorLog(res.info);
                     }
                     layer.close(layer.index);
                 });
             },
             postForm: function (url, param, callback) {
-                ly_layer.loading(true, '正在提交数据');
-                ly.httpAsyncPost(url, param, function (res) {
-                    ly.loading(false);
-                    if (res.code == ly.httpCode.success) {
+                iKnow.loading(true, '正在提交数据');
+                iKnow.httpAsyncPost(url, param, function (res) {
+                    iKnow.loading(false);
+                    if (res.code == iKnow.httpCode.success) {
                         if (!!callback) {
                             callback(res);
                         }
-                        ly.alert.success(res.info);
+                        iKnow.alert.success(res.info);
                     } else {
-                        ly.alert.error(res.info);
-                        ly.httpErrorLog(res.info);
+                        iKnow.alert.error(res.info);
+                        iKnow.httpErrorLog(res.info);
                     }
                     layer.close(layer.index);
                 });
