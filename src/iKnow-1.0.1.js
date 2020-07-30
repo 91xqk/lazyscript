@@ -38,6 +38,6 @@
         })
     }
     
-    window.iKnow = window.ino = iKnow
+    window.iKnow = iKnow
     
 })(window,window.jQuery)
