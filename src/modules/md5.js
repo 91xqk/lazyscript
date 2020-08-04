@@ -1,4 +1,4 @@
-iKnow.define('md5',function(require, module,exports ) {
+$4.define('md5',function(require, module,exports ) {
     "use strict";
   
     /*

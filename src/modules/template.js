@@ -1,5 +1,5 @@
-(function ($, iKnow, tpl) {
-    iKnow.define('template', function (require, module, exports) {
+(function ($, $4, tpl) {
+    $4.define('template', function (require, module, exports) {
         'use strict';
         $.fn.template = function () {
             var $this = $(this)

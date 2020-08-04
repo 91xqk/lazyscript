@@ -1,4 +1,4 @@
-iKnow.define('validator', function (require, module, exports) {
+$4.define('validator', function (require, module, exports) {
     'use strict';
     module.exports = {
         validReg: function (obj, reg, msg) {

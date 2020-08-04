@@ -1,4 +1,4 @@
-iKnow.define('config', function (require, module, exports) {
+$4.define('config', function (require, module, exports) {
     //作者
     exports.author='joy'
     //版本信息
@@ -10,6 +10,6 @@ iKnow.define('config', function (require, module, exports) {
     //域名
     exports.HOST=''
     //
-    exports.ProjectInfo='iKnow'
+    exports.ProjectInfo='iEarn JavaScript Project'
 
 })

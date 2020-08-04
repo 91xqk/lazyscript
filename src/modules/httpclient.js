@@ -1,6 +1,6 @@
 (function (window, $) {
     'use strict';
-    iKnow.define('httpclient', function (require, module, exports) {
+    $4.define('httpclient', function (require, module, exports) {
         var ly_layer = require('layer')
         var exres = {
             code: httpCode.exception,
@@ -14,7 +14,7 @@
             },
             // http 通信异常的时候调用此方法
             httpErrorLog: function (msg) {
-                iKnow.log(msg);
+                $4.log(msg);
             },
             // get请求方法（异步）:url地址,callback回调函数
             httpAsyncGet: function (url, callback) {
@@ -25,8 +25,8 @@
                     async: true,
                     cache: false,
                     success: function (data) {
-                        if (data.code == iKnow.httpCode.exception) {
-                            iKnow.httpErrorLog(data.info);
+                        if (data.code == $4.httpCode.exception) {
+                            $4.httpErrorLog(data.info);
                             this.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
@@ -51,14 +51,14 @@
                     async: false,
                     cache: false,
                     success: function (data) {
-                        if (data.code == iKnow.httpCode.exception) {
-                            iKnow.httpErrorLog(data.info);
+                        if (data.code == $4.httpCode.exception) {
+                            $4.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
                         res = data;
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        iKnow.httpErrorLog(textStatus);
+                        $4.httpErrorLog(textStatus);
                     },
                     beforeSend: function () {},
                     complete: function () {}
@@ -75,14 +75,14 @@
                     async: true,
                     cache: false,
                     success: function (data) {
-                        if (data.code == iKnow.httpCode.exception) {
-                            iKnow.httpErrorLog(data.info);
+                        if (data.code == $4.httpCode.exception) {
+                            $4.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
                         callback(data);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        iKnow.httpErrorLog(textStatus);
+                        $4.httpErrorLog(textStatus);
                         callback(exres);
                     },
                     beforeSend: function () {},
@@ -99,14 +99,14 @@
                     async: false,
                     cache: false,
                     success: function (data) {
-                        if (data.code == iKnow.httpCode.exception) {
-                            iKnow.httpErrorLog(data.info);
+                        if (data.code == $4.httpCode.exception) {
+                            $4.httpErrorLog(data.info);
                             data.info = '系统异常，请联系管理员！';
                         }
                         callback(data);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        iKnow.httpErrorLog(textStatus);
+                        $4.httpErrorLog(textStatus);
                         callback(exres);
                     },
                     beforeSend: function () {},
@@ -123,15 +123,15 @@
                     async: true,
                     cache: false,
                     success: function (res) {
-                        if (res.code == iKnow.httpCode.success) {
+                        if (res.code == $4.httpCode.success) {
                             callback(res.data);
                         } else {
-                            iKnow.httpErrorLog(res.info);
+                            $4.httpErrorLog(res.info);
                             callback(null);
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        iKnow.httpErrorLog(textStatus);
+                        $4.httpErrorLog(textStatus);
                         callback(null);
                     },
                     beforeSend: function () {},
@@ -139,49 +139,49 @@
                 });
             },
             updateForm: function (url, param, callback) {
-                iKnow.loading(true, '正在更新数据');
-                iKnow.httpAsyncPost(url, param, function (res) {
-                    iKnow.loading(false);
-                    if (res.code == iKnow.httpCode.success) {
+                $4.loading(true, '正在更新数据');
+                $4.httpAsyncPost(url, param, function (res) {
+                    $4.loading(false);
+                    if (res.code == $4.httpCode.success) {
                         if (!!callback) {
                             callback(res);
                         }
-                        iKnow.alert.success(res.info);
+                        $4.alert.success(res.info);
                     } else {
-                        iKnow.alert.error(res.info);
-                        iKnow.httpErrorLog(res.info);
+                        $4.alert.error(res.info);
+                        $4.httpErrorLog(res.info);
                     }
                     layer.close(layer.index);
                 });
             },
             deleteForm: function (url, param, callback) {
-                iKnow.loading(true, '正在删除数据');
-                iKnow.httpAsyncPost(url, param, function (res) {
-                    iKnow.loading(false);
-                    if (res.code == iKnow.httpCode.success) {
+                $4.loading(true, '正在删除数据');
+                $4.httpAsyncPost(url, param, function (res) {
+                    $4.loading(false);
+                    if (res.code == $4.httpCode.success) {
                         if (!!callback) {
                             callback(res);
                         }
-                        iKnow.alert.success(res.info);
+                        $4.alert.success(res.info);
                     } else {
-                        iKnow.alert.error(res.info);
-                        iKnow.httpErrorLog(res.info);
+                        $4.alert.error(res.info);
+                        $4.httpErrorLog(res.info);
                     }
                     layer.close(layer.index);
                 });
             },
             postForm: function (url, param, callback) {
-                iKnow.loading(true, '正在提交数据');
-                iKnow.httpAsyncPost(url, param, function (res) {
-                    iKnow.loading(false);
-                    if (res.code == iKnow.httpCode.success) {
+                $4.loading(true, '正在提交数据');
+                $4.httpAsyncPost(url, param, function (res) {
+                    $4.loading(false);
+                    if (res.code == $4.httpCode.success) {
                         if (!!callback) {
                             callback(res);
                         }
-                        iKnow.alert.success(res.info);
+                        $4.alert.success(res.info);
                     } else {
-                        iKnow.alert.error(res.info);
-                        iKnow.httpErrorLog(res.info);
+                        $4.alert.error(res.info);
+                        $4.httpErrorLog(res.info);
                     }
                     layer.close(layer.index);
                 });

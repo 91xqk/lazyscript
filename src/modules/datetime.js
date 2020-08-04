@@ -1,4 +1,4 @@
-iKnow.define('datetime',function (require, module, exports) {
+$4.define('datetime',function (require, module, exports) {
 
     var date = new Date();
     var sort_year = date.getYear(); //获取当前年份(2位)

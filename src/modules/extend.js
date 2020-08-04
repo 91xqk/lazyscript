@@ -1,4 +1,4 @@
-iKnow.define('extend',function (require, module, exports) {
+$4.define('extend',function (require, module, exports) {
     var util = require("common");
     var stringExtend = {
       //字符串转小写

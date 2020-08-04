@@ -1,4 +1,4 @@
-iKnow.define('demo', function (require, module, exports) {
+$4.define('demo', function (require, module, exports) {
     'use strict';
     
     /*获取和设置表单数据*/
