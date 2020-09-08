@@ -1,4 +1,4 @@
-$4.define('common', function (require, module, exports) {
+arsenal.define('common', function (require, module, exports) {
     var config = require('config')
     var datetime = require('datetime')
     module.exports = {

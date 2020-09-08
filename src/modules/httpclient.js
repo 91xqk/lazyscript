@@ -1,6 +1,6 @@
 (function (window, $) {
     'use strict';
-    $4.define('httpclient', function (require, module, exports) {
+    arsenal.define('httpclient', function (require, module, exports) {
         var ly_layer = require('layer')
         var exres = {
             code: httpCode.exception,

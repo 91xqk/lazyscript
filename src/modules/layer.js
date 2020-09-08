@@ -1,4 +1,4 @@
-$4.define('layer', function (require, module, exports) {
+arsenal.define('layer', function (require, module, exports) {
     module.exports = {
         //
         msg: function (msg) {

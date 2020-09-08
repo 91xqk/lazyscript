@@ -1,4 +1,4 @@
-$4.define('extend',function (require, module, exports) {
+arsenal.define('extend',function (require, module, exports) {
     var util = require("common");
     var stringExtend = {
       //字符串转小写

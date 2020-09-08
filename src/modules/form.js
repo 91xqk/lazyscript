@@ -1,4 +1,4 @@
-$4.define('demo', function (require, module, exports) {
+arsenal.define('demo', function (require, module, exports) {
     'use strict';
     
     /*获取和设置表单数据*/

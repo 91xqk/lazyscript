@@ -1,5 +1,5 @@
-(function ($, $4, tpl) {
-    $4.define('template', function (require, module, exports) {
+(function ($, arsenal, tpl) {
+    arsenal.define('template', function (require, module, exports) {
         'use strict';
         $.fn.template = function () {
             var $this = $(this)
@@ -22,4 +22,4 @@
         return null;
     })
 
-})(window.jQuery, window.lazy, window.template)
+})(window.jQuery, window.arsenal, window.template)

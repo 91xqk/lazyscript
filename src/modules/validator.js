@@ -1,4 +1,4 @@
-$4.define('validator', function (require, module, exports) {
+arsenal.define('validator', function (require, module, exports) {
     'use strict';
     module.exports = {
         validReg: function (obj, reg, msg) {
